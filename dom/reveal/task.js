@@ -1,10 +1,10 @@
-const reveal =Array.from(document.querySelectorAll('.reveal'));
+const reveal = Array.from(document.querySelectorAll('.reveal'));
 
-const showRevealBlock =() => {
+const showRevealBlock = () => {
 	reveal.forEach(item => {
-		const {top, bottom} = item.getBoundingClientRect()
+		const {top} = item.getBoundingClientRect()
 
-		if (top < window.innerHeight || bottom > 0) {
+		if (top < window.innerHeight && top > 0) {
 			item.classList.add('reveal_active');
 		} else {
 			item.classList.remove('reveal_active');
